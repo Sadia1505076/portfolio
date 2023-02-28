@@ -37,7 +37,14 @@ export default function Projects() {
     const problemSolvingProjects: Project[] = allProjects.filter(project =>
       project.tag !== undefined && project.tag.includes(ProjectTag.ProblemSolving)
     );
-    const rest: Project[] = allProjects.filter(project => project.tag == undefined || project.tag.length == 0);
+    const rest: Project[] = allProjects.filter(
+      (project) =>
+        project.tag == undefined ||
+        project.tag.length == 0 ||
+        (!project.tag.includes(ProjectTag.MostRecent) &&
+          !project.tag.includes(ProjectTag.Research) &&
+          !project.tag.includes(ProjectTag.ProblemSolving))
+    );
 
     const [searchValue, setSearchValue] = useState('');
     const filteredBlogPosts = allProjects.filter(
