@@ -1,4 +1,4 @@
-export default function VideoCard({ href, length, title, index }) {
+export default function BlogCard({ href, length, title, index }) {
   return (
     <a
       className="w-full"
@@ -35,18 +35,6 @@ export default function VideoCard({ href, length, title, index }) {
                 d="M17.5 12h-15m11.667-4l3.333 4-3.333-4zm3.333 4l-3.333 4 3.333-4z"
               />
             </svg>
-            {/* <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4 text-gray-500 dark:text-gray-100"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fillRule="evenodd"
-                d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
-                clipRule="evenodd"
-              />
-            </svg> */}
           </div>
         </div>
       </div>

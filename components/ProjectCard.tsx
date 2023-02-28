@@ -11,6 +11,8 @@ export default function BlogPostCard(project: Project) {
   return (
     <Link
       //href={`/blog/${project.slug}`}
+      target="_blank"
+      rel="noopener noreferrer"
       href={project.githubLink}
       className={cn(
         'transform hover:scale-[1.01] transition-all',

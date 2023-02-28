@@ -1,6 +1,6 @@
 import { Suspense, useState } from 'react';
 import Container from 'components/Container';
-import BlogPost from 'components/BlogPost';
+import ProjectDetails from 'components/ProjectDetails';
 import { Project, ProjectTag } from 'lib/types';
 import { allProjects } from 'lib/global';
 
@@ -13,7 +13,7 @@ function projectsWithHeader (projects: Project[], headerText: string) {
         </h3>
         {projects.map((project) => {
           return (
-            <BlogPost
+            <ProjectDetails
               title={project.title}
               tools={project.tools}
               githubLink={project.githubLink}
@@ -106,7 +106,7 @@ export default function Projects() {
                 </p>
               )}
               {filteredBlogPosts.map((project) => (
-                <BlogPost
+                <ProjectDetails
                   key={project.title}
                   title={project.title}
                   tools={project.tools}

@@ -3,8 +3,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import Container from '../components/Container';
-import BlogPostCard from '../components/BlogPostCard';
-import VideoCard from '../components/VideoCard';
+import ProjectCard from '../components/ProjectCard';
+import BlogCard from '../components/BlogCard';
 import { allProjects } from 'lib/global';
 import { Project, ProjectTag } from 'lib/types';
 
@@ -23,7 +23,8 @@ export default function Home() {
                 Software Engineer
               </h2>
               <p className="text-gray-600 dark:text-gray-400 mb-16">
-              I'm a software engineer who enjoys solving problems and is constantly keen to learn about and try out new technologies.
+                I'm a software engineer who enjoys solving problems and is
+                constantly keen to learn about and try out new technologies.
               </p>
             </div>
             <div className="w-[80px] sm:w-[176px] relative mb-8 sm:mb-0 mr-auto">
@@ -43,12 +44,14 @@ export default function Home() {
             Featured Projects
           </h3>
           <div className="flex gap-6 flex-col md:flex-row">
-            {favProjects.map(project => <BlogPostCard
-              title={project.title}
-              githubLink={project.githubLink}
-              gradient={project.gradient}
-              tools={project.tools}
-            />)}
+            {favProjects.map((project) => (
+              <ProjectCard
+                title={project.title}
+                githubLink={project.githubLink}
+                gradient={project.gradient}
+                tools={project.tools}
+              />
+            ))}
           </div>
           <Link
             href="/project"
@@ -79,28 +82,26 @@ export default function Home() {
           <p className="text-gray-600 dark:text-gray-400 mb-4">
             These are the things I have been practicing and learning about.
           </p>
-          <VideoCard
+          <BlogCard
             index="01"
             href="https://sadiatasnim.notion.site/CPP-cheat-sheet-5fea2d5e1c0e496396c1a68a50897521"
             length="~6 mins read"
             title="C++ cheat sheet"
           />
-          <VideoCard
+          <BlogCard
             index="02"
             href="https://www.notion.so/sadiatasnim/Terraform-IaC-Infrastructure-as-Code-cd14290775294a6189c584d5a88d9468?pvs=4"
             length="~3 mins read"
             title="Terraform - the basics and how to install it on windows"
           />
-          <VideoCard
+          <BlogCard
             index="03"
             href="https://sadiatasnim.notion.site/Typescript-9247cea5f5be47aa8d0bf3bc3a448103"
             length="~4 mins read"
             title="Typescript - Classes, Type manipulation and Miscellaneous"
           />
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.youtube.com/playlist?list=PL6bwFJ82M6FXgctyoWXqj7H0GK8_YIeF1"
+          <Link
+            href="/blog"
             className="flex items-center mt-8 text-gray-600 dark:text-gray-400 leading-7 rounded-lg hover:text-gray-800 dark:hover:text-gray-200 transition-all h-6"
           >
             Read all posts
@@ -118,7 +119,7 @@ export default function Home() {
                 d="M17.5 12h-15m11.667-4l3.333 4-3.333-4zm3.333 4l-3.333 4 3.333-4z"
               />
             </svg>
-          </a>
+          </Link>
           <span className="h-16" />
           {/* <Subscribe /> */}
         </div>

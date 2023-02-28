@@ -1,4 +1,4 @@
-import { Project, ProjectTag } from './types';
+import { Blog, BlogTag, Project, ProjectTag } from './types';
 
 export const allProjects: Project[] = [
   {
@@ -7,7 +7,7 @@ export const allProjects: Project[] = [
     tools: ['NextJs', 'Prisma', 'MySql'],
     startDate: 'Jan 2023',
     tag: [ProjectTag.MostRecent, ProjectTag.Favorite],
-    gradient: "from-[#D8B4FE] to-[#818CF8]"
+    gradient: 'from-[#D8B4FE] to-[#818CF8]'
   },
   {
     title: 'Analyzing hCov genome sequence',
@@ -39,7 +39,7 @@ export const allProjects: Project[] = [
     startDate: 'May 2019',
     endDate: 'May 2019',
     tag: [ProjectTag.Favorite],
-    gradient: "from-[#6EE7B7] via-[#3B82F6] to-[#9333EA]"
+    gradient: 'from-[#6EE7B7] via-[#3B82F6] to-[#9333EA]'
   },
   {
     title: 'Chaldal tech job portal',
@@ -48,7 +48,7 @@ export const allProjects: Project[] = [
     startDate: 'Aug 2020',
     endDate: 'Aug 2020',
     tag: [ProjectTag.Favorite],
-    gradient: "from-[#FDE68A] via-[#FCA5A5] to-[#FECACA]"
+    gradient: 'from-[#FDE68A] via-[#FCA5A5] to-[#FECACA]'
   },
   {
     title: 'Automated Medication System',
@@ -77,5 +77,26 @@ export const allProjects: Project[] = [
     tools: ['Java'],
     startDate: 'Nov 2018',
     endDate: 'Nov 2018'
+  }
+];
+
+export const allBlogs: Blog[] = [
+  {
+    title: 'C++ cheat sheet',
+    notionLink: 'https://github.com/Sadia1505076/url_shortener',
+    length: '6 mins',
+    tag: [BlogTag.Favorite]
+  },
+  {
+    title: 'Terraform - the basics and how to install it on windows',
+    notionLink: 'https://github.com/Sadia1505076/url_shortener',
+    length: '3 mins',
+    tag: [BlogTag.Favorite]
+  },
+  {
+    title: 'Typescript - Classes, Type manipulation and Miscellaneous',
+    notionLink: 'https://github.com/Sadia1505076/url_shortener',
+    length: '4 mins',
+    tag: [BlogTag.Favorite]
   }
 ];

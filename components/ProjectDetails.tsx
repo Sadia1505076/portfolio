@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { isEmptyOrNull } from 'lib/helper';
 
-export default function BlogPost({
+export default function ProjectDetails({
   title,
   tools,
   githubLink,
@@ -25,6 +25,8 @@ export default function BlogPost({
 
   return (
     <Link
+      target="_blank"
+      rel="noopener noreferrer"
       href={githubLink}
       className="w-full transform hover:scale-[1.01] transition-all"
     >

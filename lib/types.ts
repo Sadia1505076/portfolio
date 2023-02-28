@@ -81,6 +81,10 @@ export enum ProjectTag {
   ProblemSolving
 }
 
+export enum BlogTag {
+  Favorite
+}
+
 export type Project = {
   title: string;
   githubLink: string;
@@ -89,5 +93,12 @@ export type Project = {
   startDate?: string;
   endDate?: string;
   tag?: ProjectTag[];
+};
+
+export type Blog = {
+  title: string;
+  notionLink: string;
+  length: string;
+  tag?: BlogTag[];
 };
 
