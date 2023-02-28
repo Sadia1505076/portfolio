@@ -4,10 +4,12 @@ import Link from 'next/link';
 
 import Container from '../components/Container';
 import BlogPostCard from '../components/BlogPostCard';
-import Subscribe from '../components/Subscribe';
 import VideoCard from '../components/VideoCard';
+import { allProjects } from 'lib/global';
+import { Project, ProjectTag } from 'lib/types';
 
 export default function Home() {
+  const favProjects: Project[] = allProjects.filter(project => project.tag !== undefined && project.tag.includes(ProjectTag.Favorite));
   return (
     <Suspense fallback={null}>
       <Container>
@@ -41,30 +43,15 @@ export default function Home() {
             Featured Projects
           </h3>
           <div className="flex gap-6 flex-col md:flex-row">
-            <BlogPostCard
-              title="Url Shortener using Ticket Server and Base62 encoding"
-              //slug="style-guides-component-libraries-design-systems"
-              githubLink="https://github.com/Sadia1505076/url_shortener"
-              gradient="from-[#D8B4FE] to-[#818CF8]"
-              tools={["NextJs", "Prisma", "MySql"]}
-            />
-            <BlogPostCard
-              title="Prediction of stock prices using time-Series analytical models."
-              //slug="rust"
-              githubLink="https://github.com/Sadia1505076/stock-price-predictor"
-              gradient="from-[#6EE7B7] via-[#3B82F6] to-[#9333EA]"
-              tools={["Django", "Python", "Keras", "MySql"]}
-            />
-            <BlogPostCard
-              title="Chaldal tech job portal"
-              //slug="react-state-management"
-              githubLink="https://github.com/Sadia1505076/chaldal_job_portal_react"
-              gradient="from-[#FDE68A] via-[#FCA5A5] to-[#FECACA]"
-              tools={["React", "CSS"]}
-            />
+            {favProjects.map(project => <BlogPostCard
+              title={project.title}
+              githubLink={project.githubLink}
+              gradient={project.gradient}
+              tools={project.tools}
+            />)}
           </div>
           <Link
-            href="/projects"
+            href="/project"
             className="flex items-center mt-8 text-gray-600 dark:text-gray-400 leading-7 rounded-lg hover:text-gray-800 dark:hover:text-gray-200 transition-all h-6"
           >
             <>

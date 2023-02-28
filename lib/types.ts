@@ -74,9 +74,20 @@ export type Unsplash = {
   views: number;
 };
 
+export enum ProjectTag {
+  MostRecent,
+  Favorite,
+  Research,
+  ProblemSolving
+}
+
 export type Project = {
   title: string;
   githubLink: string;
-  gradient: string;
+  gradient?: string;
   tools: string[];
+  startDate?: string;
+  endDate?: string;
+  tag?: ProjectTag[];
 };
+
