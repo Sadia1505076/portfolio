@@ -83,19 +83,19 @@ export const allProjects: Project[] = [
 export const allBlogs: Blog[] = [
   {
     title: 'C++ cheat sheet',
-    notionLink: 'https://github.com/Sadia1505076/url_shortener',
+    notionLink: 'https://sadiatasnim.notion.site/CPP-cheat-sheet-5fea2d5e1c0e496396c1a68a50897521',
     length: '6 mins',
     tag: [BlogTag.Favorite]
   },
   {
     title: 'Terraform - the basics and how to install it on windows',
-    notionLink: 'https://github.com/Sadia1505076/url_shortener',
+    notionLink: 'https://www.notion.so/sadiatasnim/Terraform-IaC-Infrastructure-as-Code-cd14290775294a6189c584d5a88d9468?pvs=4',
     length: '3 mins',
     tag: [BlogTag.Favorite]
   },
   {
     title: 'Typescript - Classes, Type manipulation and Miscellaneous',
-    notionLink: 'https://github.com/Sadia1505076/url_shortener',
+    notionLink: 'https://sadiatasnim.notion.site/Typescript-9247cea5f5be47aa8d0bf3bc3a448103',
     length: '4 mins',
     tag: [BlogTag.Favorite]
   }

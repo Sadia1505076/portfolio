@@ -14,30 +14,46 @@ export default function SnippetsPage({ snippet }: { snippet: Snippet }) {
   );
 }
 
-export async function getStaticPaths() {
-  const paths = await sanityClient.fetch(snippetSlugsQuery);
-  return {
-    paths: paths.map((slug) => ({ params: { slug } })),
-    fallback: 'blocking'
-  };
-}
+// export async function getStaticPaths() {
+//   const paths = await sanityClient.fetch(snippetSlugsQuery);
+//   return {
+//     paths: paths.map((slug) => ({ params: { slug } })),
+//     fallback: 'blocking'
+//   };
+// }
 
 export async function getStaticProps({ params, preview = false }) {
-  const { snippet } = await getClient(preview).fetch(snippetsQuery, {
-    slug: params.slug
-  });
+  // const { snippet } = await getClient(preview).fetch(snippetsQuery, {
+  //   slug: params.slug
+  // });
 
-  if (!snippet) {
-    return { notFound: true };
-  }
+  // if (!snippet) {
+  //   return { notFound: true };
+  // }
+  // let snippet: Snippet = {
+  //   _id: "id",
+  //   slug: "js",
+  //   title: "jstitle",
+  //   description: "jsdescription",
+  //   content
+  // }
 
-  const { html } = await mdxToHtml(snippet.content);
+  // const { html } = await mdxToHtml(snippet.content);
+  const { html } = await mdxToHtml('####Javascript ```javascript function test(){ console.log("Hello world!");}```');
 
   return {
     props: {
+      // snippet: {
+      //   ...snippet,
+      //   content: html
+      // }
       snippet: {
-        ...snippet,
-        content: html
+        _id: "id",
+        slug: "js",
+        title: "jstitle",
+        description: "jsdescription",
+        content: html,
+        logo: "logo"
       }
     }
   };

@@ -5,11 +5,18 @@ import Link from 'next/link';
 import Container from '../components/Container';
 import ProjectCard from '../components/ProjectCard';
 import BlogCard from '../components/BlogCard';
-import { allProjects } from 'lib/global';
-import { Project, ProjectTag } from 'lib/types';
+import { allBlogs, allProjects } from 'lib/global';
+import { Blog, BlogTag, Project, ProjectTag } from 'lib/types';
 
 export default function Home() {
-  const favProjects: Project[] = allProjects.filter(project => project.tag !== undefined && project.tag.includes(ProjectTag.Favorite));
+  const favProjects: Project[] = allProjects.filter(
+    (project) =>
+      project.tag !== undefined && project.tag.includes(ProjectTag.Favorite)
+  );
+  const favBlogs: Blog[] = allBlogs.filter(
+    (project) =>
+      project.tag !== undefined && project.tag.includes(BlogTag.Favorite)
+  );
   return (
     <Suspense fallback={null}>
       <Container>
@@ -82,24 +89,16 @@ export default function Home() {
           <p className="text-gray-600 dark:text-gray-400 mb-4">
             These are the things I have been practicing and learning about.
           </p>
-          <BlogCard
-            index="01"
-            href="https://sadiatasnim.notion.site/CPP-cheat-sheet-5fea2d5e1c0e496396c1a68a50897521"
-            length="~6 mins read"
-            title="C++ cheat sheet"
-          />
-          <BlogCard
-            index="02"
-            href="https://www.notion.so/sadiatasnim/Terraform-IaC-Infrastructure-as-Code-cd14290775294a6189c584d5a88d9468?pvs=4"
-            length="~3 mins read"
-            title="Terraform - the basics and how to install it on windows"
-          />
-          <BlogCard
-            index="03"
-            href="https://sadiatasnim.notion.site/Typescript-9247cea5f5be47aa8d0bf3bc3a448103"
-            length="~4 mins read"
-            title="Typescript - Classes, Type manipulation and Miscellaneous"
-          />
+          {favBlogs.map((blog, index) => {
+            return (
+              <BlogCard
+                index={(index + 1).toString()}
+                href={blog.notionLink}
+                length={'~' + blog.length + ' read'}
+                title={blog.title}
+              />
+            );
+          })}
           <Link
             href="/blog"
             className="flex items-center mt-8 text-gray-600 dark:text-gray-400 leading-7 rounded-lg hover:text-gray-800 dark:hover:text-gray-200 transition-all h-6"

@@ -102,3 +102,9 @@ export type Blog = {
   tag?: BlogTag[];
 };
 
+export type CodeSnippet = {
+  slug: string;
+  title: string;
+  description: string;
+  logo: string;
+}
