@@ -30,7 +30,7 @@ export default function SnippetLayout({
               height={48}
               width={48}
               //src={urlForImage(snippet.logo).url()}
-              src="/avatar.jpg"
+              src={snippet.logo}
               className="rounded-full"
             />
           </div>

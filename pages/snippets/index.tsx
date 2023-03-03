@@ -1,19 +1,10 @@
 import Container from 'components/Container';
 import FunctionCard from 'components/FunctionCard';
-import { InferGetStaticPropsType } from 'next';
-import { allSnippetsQuery } from 'lib/queries';
-import { getClient } from 'lib/sanity-server';
-import { CodeSnippet } from 'lib/types';
+import fs from 'fs';
+import matter from 'gray-matter';
+import { SnippetCard } from 'lib/types';
 
-export default function Snippets() {
-  let codeSnippets: CodeSnippet[] = [
-    {
-      slug: "slug",
-      title: "title",
-      logo: "logo",
-      description: "description"
-    }
-  ]
+export default function Snippets({allSnippetCards}) {
   return (
     <Container
       title="Code Snippets – Lee Robinson"
@@ -30,9 +21,9 @@ export default function Snippets() {
           scripts.
         </p>
         <div className="grid w-full grid-cols-1 gap-4 my-2 mt-4 sm:grid-cols-2">
-          {codeSnippets.map((snippet) => (
+          {allSnippetCards.map((snippet, index) => (
             <FunctionCard
-              key={snippet.slug}
+              key={index}
               title={snippet.title}
               slug={snippet.slug}
               logo={snippet.logo}
@@ -45,8 +36,23 @@ export default function Snippets() {
   );
 }
 
-// export async function getStaticProps({ preview = false }) {
-//   const snippets: Snippet[] = await getClient(preview).fetch(allSnippetsQuery);
+export async function getStaticProps() {
+  let allSnippetCards: SnippetCard[] = [];
+  let allFiles = fs.readdirSync('content/');
+  allFiles.forEach(filename => {
+    const mdxFile = fs.readFileSync(`content/${filename}`, {encoding:'utf8', flag:'r'});
+    const { data, content } = matter(mdxFile);
+    allSnippetCards.push({
+      title: data.title,
+      description: data.description,
+      logo: data.logo,
+      slug: filename.split('.')[0]
+    });
+  })
 
-//   return { props: { snippets } };
-// }
+  return {
+    props: {
+      allSnippetCards
+    }
+  };
+}

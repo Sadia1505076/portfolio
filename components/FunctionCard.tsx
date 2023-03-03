@@ -9,6 +9,7 @@ export default function FunctionCard({
   logo,
   ...rest
 }) {
+  console.log("inside function card")
   return (
     <Link
       href={`/snippets/${slug}`}
@@ -20,8 +21,7 @@ export default function FunctionCard({
           alt={title}
           height={32}
           width={32}
-          //src={urlForImage(logo).url()}
-          src="/avatar.jpg"
+          src={logo}
           className="rounded-full"
         />
         <h3 className="text-lg font-bold text-left mt-2 text-gray-900 dark:text-gray-100">

@@ -28,6 +28,10 @@ export default function Document(props) {
           href="/static/favicons/safari-pinned-tab.svg"
           rel="mask-icon"
         />
+        {/* <link
+            rel="stylesheet"
+            href="styles/prism.css"
+          ></link> */}
         <meta content="#ffffff" name="theme-color" />
         <meta content="#ffffff" name="msapplication-TileColor" />
         <meta

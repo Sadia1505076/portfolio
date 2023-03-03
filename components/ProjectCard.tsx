@@ -1,8 +1,10 @@
 import Link from 'next/link';
 import cn from 'classnames';
-import { Project, Views } from 'lib/types';
+import { Project } from 'lib/types';
 
-export default function BlogPostCard(project: Project) {
+const ProjectCard = (project: Project) => {
+  console.log(project.title+ ' - '+project.gradient);
+  
   return (
     <Link
       target="_blank"
@@ -21,8 +23,8 @@ export default function BlogPostCard(project: Project) {
           </h4>
           <div className="flex items-center text-gray-800 dark:text-gray-200 m-2 ml-10">
             <ul className="list-disc">
-              {project.tools.map(tool => {
-                return <li>{tool}</li>
+              {project.tools.map((tool, index) => {
+                return <li key={index}>{tool}</li>
               })}
             </ul>
           </div>
@@ -31,3 +33,5 @@ export default function BlogPostCard(project: Project) {
     </Link>
   );
 }
+
+export default ProjectCard

@@ -51,14 +51,16 @@ export default function Home() {
             Featured Projects
           </h3>
           <div className="flex gap-6 flex-col md:flex-row">
-            {favProjects.map((project) => (
+            {favProjects.map((project, index) => (
               <ProjectCard
+                key={index}
                 title={project.title}
                 githubLink={project.githubLink}
-                gradient={project.gradient}
+                // gradient={project.gradient || ''}
+                gradient='from-[#FDE68A] via-[#FCA5A5] to-[#FECACA]'
                 tools={project.tools}
-              />
-            ))}
+              />)
+            )}
           </div>
           <Link
             href="/project"
@@ -92,6 +94,7 @@ export default function Home() {
           {favBlogs.map((blog, index) => {
             return (
               <BlogCard
+                key={index}
                 index={(index + 1).toString()}
                 href={blog.notionLink}
                 length={'~' + blog.length + ' read'}
@@ -120,7 +123,6 @@ export default function Home() {
             </svg>
           </Link>
           <span className="h-16" />
-          {/* <Subscribe /> */}
         </div>
       </Container>
     </Suspense>

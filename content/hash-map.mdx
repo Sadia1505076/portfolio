@@ -1,0 +1,24 @@
+---
+title: 'Hash Map'
+description: 'This is searching algorithm performed on sorted arrays. As it divides the entire array in every iteration, the runtime is O(logn).'
+logo: '/cpp.png'
+---
+
+```cpp
+map<string, int> wordCount;
+wordCount.insert({"hello", 1});
+auto keyValue = wordCount.find("hello");
+if (keyValue == wordCount.end()) {
+    // not found
+}
+else {
+	cout<<" : found : Value : "<<wordCount["hello"]<<endl;
+}
+
+//Looping through the map
+for (auto pair: wordCount)
+{
+  // Each element in a map is a (key, value) pair
+  cout << "key:" << pair.first << " , " <<"value:" << pair.second << "    ";
+}
+```

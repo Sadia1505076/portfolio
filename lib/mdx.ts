@@ -27,13 +27,27 @@ export async function mdxToHtml(source) {
     }
   });
 
-  const tweetMatches = source.match(/<StaticTweet\sid="[0-9]+"\s\/>/g);
-  const tweetIDs = tweetMatches?.map((tweet) => tweet.match(/[0-9]+/g)[0]);
+  // const tweetMatches = source.match(/<StaticTweet\sid="[0-9]+"\s\/>/g);
+  // const tweetIDs = tweetMatches?.map((tweet) => tweet.match(/[0-9]+/g)[0]);
 
-  return {
-    html: mdxSource,
-    tweetIDs: tweetIDs || [],
-    wordCount: source.split(/\s+/gu).length,
-    readingTime: readingTime(source).text
-  };
+  // return {
+  //   html: mdxSource,
+  //   tweetIDs: tweetIDs || [],
+  //   wordCount: source.split(/\s+/gu).length,
+  //   readingTime: readingTime(source).text
+  // };
+  return mdxSource;
 }
+
+// import { remark } from 'remark';
+// import html from 'remark-html';
+// import prism from 'remark-prism';
+
+// export default async function mdxToHtml(markdown) {
+//   const result = await remark()
+//     // https://github.com/sergioramos/remark-prism/issues/265
+//     .use(html, { sanitize: false })
+//     .use(prism)
+//     .process(markdown);
+//   return result.toString();
+// }

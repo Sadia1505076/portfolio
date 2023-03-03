@@ -49,6 +49,7 @@ export default function Blogs() {
               {allBlogs.map((blog, index) => {
                 return (
                   <BlogCard
+                    key={index}
                     index={(index + 1).toString()}
                     href={blog.notionLink}
                     length={"~" + blog.length + " read"}
@@ -69,6 +70,7 @@ export default function Blogs() {
               )}
               {filteredBlogPosts.map((blog, index) => (
                 <BlogCard
+                  key={index}
                   index={(index + 1).toString()}
                   href={blog.notionLink}
                   length={"~" + blog.length + " read"}

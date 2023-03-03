@@ -11,9 +11,10 @@ function projectsWithHeader (projects: Project[], headerText: string) {
         <h3 className="mt-8 mb-4 text-2xl font-bold tracking-tight md:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-[#6EE7B7] via-[#3B82F6] to-[#9333EA]">
           {headerText}
         </h3>
-        {projects.map((project) => {
+        {projects.map((project, index) => {
           return (
             <ProjectDetails
+              key={index}
               title={project.title}
               tools={project.tools}
               githubLink={project.githubLink}
@@ -105,9 +106,9 @@ export default function Projects() {
                   No posts found.
                 </p>
               )}
-              {filteredBlogPosts.map((project) => (
+              {filteredBlogPosts.map((project, index) => (
                 <ProjectDetails
-                  key={project.title}
+                  key={index}
                   title={project.title}
                   tools={project.tools}
                   githubLink={project.githubLink}
