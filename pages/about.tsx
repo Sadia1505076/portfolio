@@ -34,6 +34,7 @@ export default function About() {
           <h4>
             <a href="https://chaldal.com">Chaldal</a>
           </h4>
+          <h5>Backed by {' '}<a href='https://www.ycombinator.com/companies/chaldal'>[YC 15]</a></h5>
           <p>
             Chaldal is a leading online grocery startup in Bangladesh promising
             quality groceries at the best price. As a Software Engineer I:
