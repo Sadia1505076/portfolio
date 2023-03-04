@@ -17,11 +17,7 @@ export default function SnippetsPage({ snippet }: { snippet: Snippet }) {
 export async function getStaticPaths() {
   let allFileNames: string[] = [];
   let allFiles = fs.readdirSync('content/');
-  allFiles.forEach(filename => {
-    const mdxFile = fs.readFileSync(`content/${filename}`, {encoding:'utf8', flag:'r'});
-    const { data, content } = matter(mdxFile);
-    allFileNames.push(filename.split('.')[0]);
-  });
+  allFiles.forEach(filename => allFileNames.push(filename.split('.')[0]));
 
   return {
     paths: allFileNames.map((slug) => ({ params: { slug } })),

@@ -26,16 +26,6 @@ export async function mdxToHtml(source) {
       format: 'mdx'
     }
   });
-
-  // const tweetMatches = source.match(/<StaticTweet\sid="[0-9]+"\s\/>/g);
-  // const tweetIDs = tweetMatches?.map((tweet) => tweet.match(/[0-9]+/g)[0]);
-
-  // return {
-  //   html: mdxSource,
-  //   tweetIDs: tweetIDs || [],
-  //   wordCount: source.split(/\s+/gu).length,
-  //   readingTime: readingTime(source).text
-  // };
   return mdxSource;
 }
 

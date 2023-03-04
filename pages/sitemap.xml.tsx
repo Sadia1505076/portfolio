@@ -1,5 +1,4 @@
-import { sanityClient } from 'lib/sanity-server';
-import { postSlugsQuery } from 'lib/queries';
+import fs from 'fs';
 
 const createSitemap = (slugs) => `<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -15,18 +14,17 @@ const createSitemap = (slugs) => `<?xml version="1.0" encoding="UTF-8"?>
     </urlset>
 `;
 export async function getServerSideProps({ res }) {
-  const allPosts = await sanityClient.fetch(postSlugsQuery);
+  let allFileNames: string[] = [];
+  let allFiles = fs.readdirSync('content/');
+  allFiles.forEach(filename => allFileNames.push(filename.split('.')[0]));
   const allPages = [
-    ...allPosts.map((slug) => `blog/${slug}`),
+    ...allFileNames.map((slug) => `snippets/${slug}`),
     ...[
       '',
       'about',
       'blog',
-      'dashboard',
-      'guestbook',
-      'newsletter',
-      'tweets',
-      'uses'
+      'project',
+      'snippets'
     ]
   ];
 
