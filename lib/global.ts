@@ -6,8 +6,7 @@ export const allProjects: Project[] = [
     githubLink: 'https://github.com/Sadia1505076/url_shortener',
     tools: ['NextJs', 'Prisma', 'MySql'],
     startDate: 'Jan 2023',
-    tag: [ProjectTag.MostRecent, ProjectTag.Favorite],
-    gradient: 'from-[#D8B4FE] to-[#818CF8]'
+    tag: [ProjectTag.MostRecent, ProjectTag.Favorite]
   },
   {
     title: 'Analyzing hCov genome sequence',
@@ -39,7 +38,6 @@ export const allProjects: Project[] = [
     startDate: 'May 2019',
     endDate: 'May 2019',
     tag: [ProjectTag.Favorite],
-    gradient: 'from-[#6EE7B7] via-[#3B82F6] to-[#9333EA]'
   },
   {
     title: 'Chaldal tech job portal',
@@ -47,10 +45,7 @@ export const allProjects: Project[] = [
     tools: ['React', 'CSS'],
     startDate: 'Aug 2020',
     endDate: 'Aug 2020',
-    tag: [ProjectTag.Favorite],
-    gradient: 'from-[#6EE7B7] via-[#3B82F6] to-[#9333EA]'
-    // gradient: 'from-[#FDE68A] via-[#FCA5A5] to-[#FECACA]'
-    // gradient: 'from-[#D8B4FE] to-[#818CF8]'
+    tag: [ProjectTag.Favorite]
   },
   {
     title: 'Automated Medication System',
@@ -87,7 +82,7 @@ export const allBlogs: Blog[] = [
     title: 'C++ cheat sheet',
     notionLink:
       'https://sadiatasnim.notion.site/CPP-cheat-sheet-5fea2d5e1c0e496396c1a68a50897521',
-    length: '6 mins',
+    length: '6 mins', // ~ word_count / 200
     tag: [BlogTag.Favorite]
   },
   {
@@ -98,16 +93,22 @@ export const allBlogs: Blog[] = [
     tag: [BlogTag.Favorite]
   },
   {
-    title: 'Typescript - Classes, Type manipulation and Miscellaneous',
+    title: 'Typescript - Classes',
     notionLink:
       'https://sadiatasnim.notion.site/Typescript-9247cea5f5be47aa8d0bf3bc3a448103',
-    length: '4 mins',
+    length: '1.5 mins',
+  },
+  {
+    title: 'Typescript - Type manipulation',
+    notionLink:
+      'https://sadiatasnim.notion.site/Typescript-9247cea5f5be47aa8d0bf3bc3a448103',
+    length: '2 mins',
     tag: [BlogTag.Favorite]
   },
   {
-    title: 'Typescript - Classes, Type manipulation and Miscellaneous',
+    title: 'Typescript - Miscellaneous',
     notionLink:
       'https://sadiatasnim.notion.site/Typescript-9247cea5f5be47aa8d0bf3bc3a448103',
-    length: '4 mins',
+    length: '1 mins',
   }
 ];

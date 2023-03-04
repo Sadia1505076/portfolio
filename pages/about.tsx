@@ -1,13 +1,8 @@
-import Link from 'next/link';
-import Image from 'next/image';
-
 import Container from 'components/Container';
-import avatar from 'public/avatar.jpg';
-import avatarBW from 'public/avatar-bw.jpg';
 
 export default function About() {
   return (
-    <Container title="About – Lee Robinson">
+    <Container title="About – Sadia Tasnim">
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16 w-full">
         <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
           About Me
@@ -16,80 +11,72 @@ export default function About() {
           <h2>Links</h2>
           <ul>
             <li>
-              Twitter: <a href="https://twitter.com/leeerob">@leeerob</a>
-            </li>
-            <li>
-              GitHub: <a href="https://github.com/leerob">@leerob</a>
-            </li>
-            <li>
-              Website: <Link href="https://leerob.io">https://leerob.io</Link>
+              GitHub: <a href="https://github.com/Sadia1505076">Sadia1505076</a>
             </li>
             <li>
               LinkedIn:{' '}
-              <a href="https://www.linkedin.com/in/leeerob/">
-                https://www.linkedin.com/in/leeerob
+              <a href="https://www.linkedin.com/in/sadia-tasnim-285433130/">
+                https://www.linkedin.com/in/sadia-tasnim-285433130/
+              </a>
+            </li>
+            <li>
+              <a
+                href="/Sadia_Tasnim_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Resume
               </a>
             </li>
           </ul>
-          <h2>Bio</h2>
-          <h3>Job Title</h3>
-          <p>Lee Robinson, VP of Developer Experience at Vercel</p>
-          <h3>Long, 3rd Person</h3>
+          <h2>Experience</h2>
+          <h3>Software Engineer</h3>
+          <h4>
+            <a href="https://chaldal.com">Chaldal</a>
+          </h4>
           <p>
-            Lee Robinson is the VP of Developer Experience at{' '}
-            <a href="http://vercel.com/">Vercel</a>, where he helps developers
-            build a faster web and leads the Next.js community. He leads the
-            community for the React framework Next.js and is an open-source
-            contributor. An educator, writer, and speaker, Lee has created
-            courses on React, Next.js, and web development.
+            Chaldal is a leading online grocery startup in Bangladesh promising
+            quality groceries at the best price. As a Software Engineer I:
+            <ul>
+              <li>
+                Rebuilt Chaldal's payment system with Chaldal's very own F\# and
+                .NET based <a href="https://eggshell.dev/">framework</a> which
+                aims to eliminate the hassle of building the UI and the backend
+                on separate tech stacks.
+              </li>
+              <li>
+                Improved Chaldal's user-facing interfaces Chaldal web and{' '}
+                <a href="https://play.google.com/store/apps/details?id=com.chaldal.poached&hl=en&gl=US">
+                  Chaldal app
+                </a>{' '}
+                built on React and React Native supported by the Express and
+                .NET based servers
+              </li>
+              <li>
+                Built the UI for both web and app for a program called
+                `Referral' reaching over 7.6k users with 7.9k+ referral usages
+                within a month of the release.
+              </li>
+              <li>
+                Built the `prescription' module of a recently introduced store
+                called the pharmacy for both web and app along with designing
+                and implementing the API specifications for it.
+              </li>
+            </ul>
           </p>
-          <h3>Long, 1st Person</h3>
+          <h3>Software Developer</h3>
+          <h4>
+            <a href="https://www.openrefactory.com/">Open Refactory</a>
+          </h4>
           <p>
-            Hey, I'm Lee. I'm the VP of Developer Experience at{' '}
-            <a href="https://vercel.com/">Vercel</a>, where my team helps
-            developers build a faster web. I'm a Next.js contributor and help
-            lead our open-source communities. I'm passionate about frontend
-            development and have created courses on React, Next.js, and web
-            development. I'm an advisor and investor in early stage startups.
-          </p>
-          <h3>Short, 3rd Person</h3>
-          <p>
-            Lee Robinson is the VP of Developer Experience at{' '}
-            <a href="http://vercel.com/">Vercel</a>, where he helps developers
-            build a faster web.
-          </p>
-          <h3>Short, 1st Person</h3>
-          <p>
-            Hey, I'm Lee. I'm the VP of Developer Experience at{' '}
-            <a href="https://vercel.com/">Vercel</a>, where my team helps
-            developers build a faster web.
+            Analyzed Java libraries to build a dataset for training automated
+            code correction models.
           </p>
           <h3>Education</h3>
           <p>
-            Lee Robinson graduated from Iowa State University with a B.S. in
-            Computer Engineering.
+            I graduated from Bangladesh University of Engineering and Technology
+            with a B.S. in Computer Science and Engineering.
           </p>
-          <h2>Headshots</h2>
-          <div className="flex space-x-8">
-            <a href="/avatar.jpg">
-              <Image
-                alt="Lee Robinson headshot"
-                width={400}
-                quality={100}
-                src={avatar}
-                className="rounded-md"
-              />
-            </a>
-            <a href="/avatar-bw.jpg">
-              <Image
-                alt="Lee Robinson headshot"
-                width={400}
-                quality={100}
-                src={avatarBW}
-                className="rounded-md"
-              />
-            </a>
-          </div>
         </div>
       </div>
     </Container>

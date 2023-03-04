@@ -36,13 +36,14 @@ export default function Home() {
             </div>
             <div className="w-[80px] sm:w-[176px] relative mb-8 sm:mb-0 mr-auto">
               <Image
+                style={{borderRadius: '50%'}}
                 alt="Sadia Tasnim"
                 height={176}
                 width={176}
                 src="/sadia.jpg"
                 sizes="30vw"
                 priority
-                className="rounded-full filter"
+                className="rounded-full filter w-[80px] sm:w-[176px]"
               />
             </div>
           </div>
@@ -56,8 +57,6 @@ export default function Home() {
                 key={index}
                 title={project.title}
                 githubLink={project.githubLink}
-                // gradient={project.gradient || ''}
-                gradient='from-[#FDE68A] via-[#FCA5A5] to-[#FECACA]'
                 tools={project.tools}
               />)
             )}

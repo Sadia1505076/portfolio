@@ -1,8 +1,6 @@
 import { MDXRemote } from 'next-mdx-remote';
 import SnippetLayout from 'layouts/snippets';
 import components from 'components/MDXComponents';
-import { snippetsQuery, snippetSlugsQuery } from 'lib/queries';
-import { sanityClient, getClient } from 'lib/sanity-server';
 import { mdxToHtml } from 'lib/mdx';
 import { Snippet } from 'lib/types';
 import fs from 'fs';
@@ -17,38 +15,21 @@ export default function SnippetsPage({ snippet }: { snippet: Snippet }) {
 }
 
 export async function getStaticPaths() {
-  // const paths = await sanityClient.fetch(snippetSlugsQuery);
-  // return {
-  //   paths: paths.map((slug) => ({ params: { slug } })),
-  //   fallback: 'blocking'
-  // };
+  let allFileNames: string[] = [];
+  let allFiles = fs.readdirSync('content/');
+  allFiles.forEach(filename => {
+    const mdxFile = fs.readFileSync(`content/${filename}`, {encoding:'utf8', flag:'r'});
+    const { data, content } = matter(mdxFile);
+    allFileNames.push(filename.split('.')[0]);
+  });
 
   return {
-    paths: [{ params: { slug: 'js' } }],
-    fallback: 'blocking', // can also be true or 'blocking'
+    paths: allFileNames.map((slug) => ({ params: { slug } })),
+    fallback: 'blocking',
   }
 }
 
 export async function getStaticProps({ params, preview = false }) {
-  // const { snippet } = await getClient(preview).fetch(snippetsQuery, {
-  //   slug: params.slug
-  // });
-
-  // if (!snippet) {
-  //   return { notFound: true };
-  // }
-  // let snippet: Snippet = {
-  //   _id: "id",
-  //   slug: "js",
-  //   title: "jstitle",
-  //   description: "jsdescription",
-  //   content
-  // }
-
-  // const { html } = await mdxToHtml(snippet.content);
-  
-// Calling the readFileSync() method
-// to read 'input.txt' file
   const { slug } = params;
   const mdxFile = fs.readFileSync(`content/${slug}.mdx`, {encoding:'utf8', flag:'r'});
   const { data, content } = matter(mdxFile)

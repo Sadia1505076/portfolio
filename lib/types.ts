@@ -88,7 +88,6 @@ export enum BlogTag {
 export type Project = {
   title: string;
   githubLink: string;
-  gradient?: string;
   tools: string[];
   startDate?: string;
   endDate?: string;

@@ -2,9 +2,7 @@ import Link from 'next/link';
 import cn from 'classnames';
 import { Project } from 'lib/types';
 
-const ProjectCard = (project: Project) => {
-  console.log(project.title+ ' - '+project.gradient);
-  
+const ProjectCard = (project: Project) => {  
   return (
     <Link
       target="_blank"
@@ -13,7 +11,7 @@ const ProjectCard = (project: Project) => {
       className={cn(
         'transform hover:scale-[1.01] transition-all',
         'rounded-xl w-full md:w-1/3 bg-gradient-to-r p-1',
-        project.gradient
+        'from-[#6EE7B7] via-[#3B82F6] to-[#9333EA]'
       )}
     >
       <div className="flex flex-col justify-between h-full bg-white dark:bg-gray-900 rounded-lg p-4">

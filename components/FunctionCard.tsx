@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { urlForImage } from 'lib/sanity';
 
 export default function FunctionCard({
   title,
@@ -9,7 +8,6 @@ export default function FunctionCard({
   logo,
   ...rest
 }) {
-  console.log("inside function card")
   return (
     <Link
       href={`/snippets/${slug}`}
