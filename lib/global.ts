@@ -81,7 +81,7 @@ export const allBlogs: Blog[] = [
   {
     title: 'Terraform - the basics and how to install it on windows',
     notionLink:
-      'https://www.notion.so/sadiatasnim/Terraform-IaC-Infrastructure-as-Code-cd14290775294a6189c584d5a88d9468?pvs=4',
+      'https://sadiatasnim.notion.site/Terraform-IaC-Infrastructure-as-Code-cd14290775294a6189c584d5a88d9468',
     length: '3 mins',
     tag: [BlogTag.Favorite]
   },
