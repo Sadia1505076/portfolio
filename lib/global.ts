@@ -79,17 +79,24 @@ export const allProjects: Project[] = [
 
 export const allBlogs: Blog[] = [
   {
-    title: 'C++ cheat sheet',
-    notionLink:
-      'https://sadiatasnim.notion.site/CPP-cheat-sheet-5fea2d5e1c0e496396c1a68a50897521',
-    length: '6 mins', // ~ word_count / 200
-    tag: [BlogTag.Favorite]
-  },
-  {
     title: 'Terraform - the basics and how to install it on windows',
     notionLink:
       'https://www.notion.so/sadiatasnim/Terraform-IaC-Infrastructure-as-Code-cd14290775294a6189c584d5a88d9468?pvs=4',
     length: '3 mins',
+    tag: [BlogTag.Favorite]
+  },
+  {
+    title: 'MDX with NextJs',
+    notionLink:
+      'https://sadiatasnim.notion.site/MDX-with-NextJs-e322c579735c4eccb6fd66e15720fb91',
+    length: '3 mins', // ~ word_count / 200
+    tag: [BlogTag.Favorite]
+  },
+  {
+    title: 'C++ cheat sheet',
+    notionLink:
+      'https://sadiatasnim.notion.site/CPP-cheat-sheet-5fea2d5e1c0e496396c1a68a50897521',
+    length: '6 mins', // ~ word_count / 200
     tag: [BlogTag.Favorite]
   },
   {
@@ -103,7 +110,6 @@ export const allBlogs: Blog[] = [
     notionLink:
       'https://sadiatasnim.notion.site/Typescript-9247cea5f5be47aa8d0bf3bc3a448103',
     length: '2 mins',
-    tag: [BlogTag.Favorite]
   },
   {
     title: 'Typescript - Miscellaneous',
