@@ -1,0 +1,38 @@
+---
+title: 'Layout Animation'
+description: 'This feature of React Native automatically animates views to their new positions when the next layout happens'
+logo: '/react_native.png'
+---
+
+```typescript
+import {
+  Platform,
+  UIManager,
+  LayoutAnimation,
+} from 'react-native';
+
+// This section makes the layout animation work on android
+if (
+  Platform.OS === 'android' &&
+  UIManager.setLayoutAnimationEnabledExperimental
+) {
+  UIManager.setLayoutAnimationEnabledExperimental(true);
+}
+
+const App = () => {
+  const [viewHeight, setViewHeight] = useState(0);
+
+  const expandView = () => {
+    LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
+    setViewHeight(200);
+  };
+
+  return (
+    <View style={{height: viewHeight}} onClick={expandView}>
+        <Text>Some Text</Text>
+    </View>
+  );
+};
+
+export default App;
+```
