@@ -3,9 +3,8 @@
 
 ## Overview
 
-- `layouts/*` - The different page layouts each MDX category (blog, snippets) uses.
+- `layouts/*` - The different page layouts each MDX category (snippets) uses.
 - `lib/*` - Short for "library", a collection of helpful utilities or code for external services.
-- `pages/blog/*` - Static pre-rendered blog pages using MDX.
 - `pages/sitemap.xml.tsx` - Automatically generated sitemap.
 - `pages/feed.xml.tsx` - Automatically generated RSS feed.
 - `pages/*` - All other static pages.
@@ -15,3 +14,6 @@
 ## Running Locally
 
 This application requires Node.js v16.13+.
+
+## Next step
+Integrate MDX for blogs too

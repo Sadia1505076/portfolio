@@ -93,17 +93,23 @@ export const allBlogs: Blog[] = [
     tag: [BlogTag.Favorite]
   },
   {
+    title: 'F# - cleanliness and readability',
+    notionLink:
+      'https://sadiatasnim.notion.site/F-cleanliness-and-readability-715630d9c50c42ada5a81e8d188c3817',
+    length: '3 mins 30 secs',
+    tag: [BlogTag.Favorite]
+  },
+  {
     title: 'C++ cheat sheet',
     notionLink:
       'https://sadiatasnim.notion.site/CPP-cheat-sheet-5fea2d5e1c0e496396c1a68a50897521',
-    length: '6 mins', // ~ word_count / 200
-    tag: [BlogTag.Favorite]
+    length: '6 mins',
   },
   {
     title: 'Typescript - Classes',
     notionLink:
       'https://sadiatasnim.notion.site/Typescript-9247cea5f5be47aa8d0bf3bc3a448103',
-    length: '1.5 mins',
+    length: '1 mins 30 secs',
   },
   {
     title: 'Typescript - Type manipulation',
