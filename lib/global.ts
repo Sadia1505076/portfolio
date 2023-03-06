@@ -15,7 +15,7 @@ export const allProjects: Project[] = [
     tools: ['Python', 'Keras', 'Scikit-Learn'],
     startDate: 'Mar 2020',
     endDate: 'Feb 2021',
-    tag: [ProjectTag.Research]
+    tag: [ProjectTag.Research, ProjectTag.Favorite]
   },
   {
     title: 'Leetcode',
@@ -44,8 +44,7 @@ export const allProjects: Project[] = [
     githubLink: 'https://github.com/Sadia1505076/chaldal_job_portal_react',
     tools: ['React', 'CSS'],
     startDate: 'Aug 2020',
-    endDate: 'Aug 2020',
-    tag: [ProjectTag.Favorite]
+    endDate: 'Aug 2020'
   },
   {
     title: 'Automated Medication System',
