@@ -38,7 +38,7 @@ export default function Container(props) {
   const router = useRouter();
   const meta = {
     title: 'Sadia Tasnim – Software Developer',
-    description: `Full-stack developer, system design enthusiast, and course creator.`,
+    description: `Full-stack developer, system design enthusiast, and technology geek.`,
     type: 'website',
     ...customMeta
   };
