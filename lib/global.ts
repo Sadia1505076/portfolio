@@ -4,9 +4,18 @@ export const allProjects: Project[] = [
   {
     title: 'Url Shortener using Ticket Server and Base62 encoding',
     githubLink: 'https://github.com/Sadia1505076/url_shortener',
-    tools: ['NextJs', 'Prisma', 'MySql'],
+    tools: ['NestJs', 'Prisma', 'MySql'],
     startDate: 'Jan 2023',
     tag: [ProjectTag.MostRecent, ProjectTag.Favorite]
+  },
+  {
+    title: 'A simple CRUD microservice',
+    githubLink:
+      'https://github.com/Sadia1505076/CRUD_microservice',
+    tools: ['NestJs', 'MySql', 'Prisma'],
+    startDate: 'Mar 8, 2023',
+    endDate: 'Mar 9, 2023',
+    tag: [ProjectTag.MostRecent]
   },
   {
     title: 'Analyzing hCov genome sequence',
