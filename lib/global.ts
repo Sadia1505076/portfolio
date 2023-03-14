@@ -3,8 +3,8 @@ import { Blog, BlogTag, Project, ProjectTag } from './types';
 export const allProjects: Project[] = [
   {
     title: 'Url Shortener using Ticket Server and Base62 encoding',
-    githubLink: 'https://github.com/Sadia1505076/url_shortener',
-    tools: ['NestJs', 'Prisma', 'MySql'],
+    githubLink: 'https://github.com/Sadia1505076/url_shortener_with_docker_aws',
+    tools: ['Docker', 'Nginx', 'AWS lightsail', 'NextJs', 'Prisma', 'MySql'],
     startDate: 'Jan 2023',
     tag: [ProjectTag.MostRecent, ProjectTag.Favorite]
   },
