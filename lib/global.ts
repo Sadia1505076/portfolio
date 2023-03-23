@@ -87,6 +87,12 @@ export const allProjects: Project[] = [
 
 export const allBlogs: Blog[] = [
   {
+    title: 'ZipLink - my very own URL shortener',
+    notionLink: 'https://sadiatasnim.notion.site/ZipLink-my-very-own-URL-shortener-8aaec689e4ed43978a6ffeb0945fd1c6',
+    length: '2 mins',
+    tag: [BlogTag.Favorite]
+  },
+  {
     title: 'Terraform - the basics and how to install it on windows',
     notionLink:
       'https://sadiatasnim.notion.site/Terraform-IaC-Infrastructure-as-Code-cd14290775294a6189c584d5a88d9468',
