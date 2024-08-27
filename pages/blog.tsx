@@ -14,7 +14,7 @@ export const getServerSideProps = (async () => {
     let titleObject = result["properties"]["title"]["title"];
     if (titleObject.length >= 1) blog.title = titleObject[0]["plain_text"];
 
-    let readingTimeObject = result["properties"]["reading_time"];
+    let readingTimeObject: any = result["properties"]["reading_time"];
     if (readingTimeObject) {
       const len: number = readingTimeObject["number"];
       if (len > 1) blog.length = len.toString() + ' mins';

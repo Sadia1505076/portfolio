@@ -14,6 +14,10 @@
 ## Running Locally
 
 This application requires Node.js v16.13+.
+```bash
+pnpm install
+pnpm run dev
+```
 
 ## Next step
 Integrate MDX for blogs too
