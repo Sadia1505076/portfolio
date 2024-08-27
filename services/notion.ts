@@ -1,10 +1,10 @@
 import { Client } from '@notionhq/client';
 
-const notion = new Client({ auth: process.env.REACT_APP_NOTION_API_KEY });
+const notion = new Client({ auth: process.env.NOTION_SECRET });
 
 export const fetchDatabaseByFavourite = async () => {
   const response = await notion.databases.query({
-    database_id: process.env.REACT_APP_NOTION_DATABASE_ID,
+    database_id: process.env.NOTION_DATABASE_ID,
     filter: {
       property: 'tag',
       multi_select: {
@@ -23,7 +23,7 @@ export const fetchDatabaseByFavourite = async () => {
 
 export const fetchFullDatabase = async () => {
   const response = await notion.databases.query({
-    database_id: process.env.REACT_APP_NOTION_DATABASE_ID,
+    database_id: process.env.NOTION_DATABASE_ID,
     sorts: [
       {
         property: 'order', // Another property to sort by
