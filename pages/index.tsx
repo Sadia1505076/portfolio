@@ -5,17 +5,40 @@ import Link from 'next/link';
 import Container from '../components/Container';
 import ProjectCard from '../components/ProjectCard';
 import BlogCard from '../components/BlogCard';
-import { allBlogs, allProjects } from 'lib/global';
-import { Blog, BlogTag, Project, ProjectTag } from 'lib/types';
+import { allProjects } from 'lib/global';
+import { Blog, Project, ProjectTag } from 'lib/types';
+import { fetchDatabaseByFavourite } from 'services/notion';
+import type { GetServerSideProps, InferGetServerSidePropsType } from 'next'
 
-export default function Home() {
+
+export const getServerSideProps = (async () => {
+  let favBlogs: Blog[] = [];
+  const results = await fetchDatabaseByFavourite();
+  results.map(result => {
+    let blog: Blog = {} as Blog;
+    let titleObject = result["properties"]["title"]["title"];
+    if (titleObject.length >= 1) blog.title = titleObject[0]["plain_text"];
+
+    let readingTimeObject = result["properties"]["reading_time"];
+    if(readingTimeObject) {
+      const len: number = readingTimeObject["number"];
+      if (len > 1) blog.length = len.toString() + ' mins';
+      else blog.length = len.toString() + ' min';
+    }
+
+    let urlObject = result["properties"]["url"];
+    if(urlObject) blog.notionLink = urlObject["url"];
+
+    favBlogs.push(blog);
+  });
+
+  return { props: { favBlogs } }
+}) satisfies GetServerSideProps<{ favBlogs: Blog[] }>
+
+export default function Home({ favBlogs }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const favProjects: Project[] = allProjects.filter(
     (project) =>
       project.tag !== undefined && project.tag.includes(ProjectTag.Favorite)
-  );
-  const favBlogs: Blog[] = allBlogs.filter(
-    (project) =>
-      project.tag !== undefined && project.tag.includes(BlogTag.Favorite)
   );
   return (
     <Suspense fallback={null}>
@@ -36,7 +59,7 @@ export default function Home() {
             </div>
             <div className="w-[80px] sm:w-[176px] relative mb-8 sm:mb-0 mr-auto">
               <Image
-                style={{borderRadius: '50%'}}
+                style={{ borderRadius: '50%' }}
                 alt="Sadia Tasnim"
                 height={176}
                 width={176}
@@ -90,7 +113,7 @@ export default function Home() {
           <p className="text-gray-600 dark:text-gray-400 mb-4">
             These are the things I have been practicing and learning about.
           </p>
-          {favBlogs.map((blog, index) => {
+          {favBlogs && favBlogs.map((blog, index) => {
             return (
               <BlogCard
                 key={index}

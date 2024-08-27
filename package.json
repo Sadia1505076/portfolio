@@ -13,6 +13,7 @@
     "@mdx-js/react": "^2.3.0",
     "@next/font": "13.0.2",
     "@next/mdx": "^13.2.3",
+    "@notionhq/client": "^2.2.15",
     "@prisma/client": "^4.5.0",
     "@sanity/image-url": "^1.0.1",
     "@sanity/webhook": "^2.0.0",
