@@ -2,6 +2,13 @@ import { Blog, BlogTag, Project, ProjectTag } from './types';
 
 export const allProjects: Project[] = [
   {
+    title: 'Serverless image processing with AWS SAM',
+    githubLink: 'https://github.com/Sadia1505076/serverless-image-processing',
+    tools: ['AWS SAM', 'Lambda', 'SQS', 'S3', 'Cloudwatch', 'Docker'],
+    startDate: 'Aug 2024',
+    tag: [ProjectTag.MostRecent, ProjectTag.Favorite]
+  },
+  {
     title: 'Url Shortener using Ticket Server and Base62 encoding',
     githubLink: 'https://github.com/Sadia1505076/url_shortener_with_docker_aws',
     tools: ['Docker', 'Nginx', 'AWS lightsail', 'NextJs', 'Prisma', 'MySql'],
@@ -24,7 +31,7 @@ export const allProjects: Project[] = [
     tools: ['Python', 'Keras', 'Scikit-Learn'],
     startDate: 'Mar 2020',
     endDate: 'Feb 2021',
-    tag: [ProjectTag.Research, ProjectTag.Favorite]
+    tag: [ProjectTag.Research]
   },
   {
     title: 'Leetcode',
